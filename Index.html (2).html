@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NexusBank Pro - Premium digital banking solutions">
+    <meta name="keywords" content="banking, finance, digital banking, online banking">
+    <title>NexusBank Pro | Next-Gen Digital Banking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --primary-dark: #003d82;
+            --secondary: #00a896;
+            --secondary-dark: #008672;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --border-radius: 8px;
+            --max-width: 1200px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            font-size: 0.8rem;
+            background: var(--secondary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+        
+        nav a:hover::after, nav a.active::after {
+            width: 70%;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 86, 179, 0.8), rgba(0, 168, 150, 0.6));
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .feature-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .feature-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Dashboard Section */
+        .dashboard {
+            padding: 5rem 0;
+            background-color: #f0f4f8;
+        }
+        
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+        
+        .user-profile {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .user-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--light);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            border: 3px solid var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .user-details {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        .user-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .user-details p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .user-status {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        
+        .quick-links {
+            margin-top: 2rem;
+        }
+        
+        .quick-links h4 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .quick-links ul {
+            list-style: none;
+        }
+        
+        .quick-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .quick-links a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 0.95rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .quick-links a:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            padding-left: 0.8rem;
+        }
+        
+        .quick-links i {
+            width: 20px;
+            text-align: center;
+            color: var(--secondary);
+        }
+        
+        .accounts-summary {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 2rem;
+        }
+        
+        .accounts-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .accounts-header h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+        }
+        
+        .account-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .account-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .account-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .account-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+        }
+        
+        .account-card:nth-child(2)::before {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .account-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .account-type {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .account-balance {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        
+        .account-number {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .quick-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+        
+        .quick-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        /* Transactions Section */
+        .transactions {
+            margin-top: 2rem;
+        }
+        
+        .transactions-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .transactions-header h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        .transactions-header a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .transactions-header a:hover {
+            text-decoration: underline;
+        }
+        
+        .transactions-list {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .transaction-item {
+            display: grid;
+            grid-template-columns: 50px 1fr auto;
+            gap: 1rem;
+            padding: 1.2rem;
+            border-bottom: 1px solid var(--light-gray);
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+        
+        .transaction-item:hover {
+            background-color: var(--light);
+        }
+        
+        .transaction-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .transaction-details h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+        
+        .transaction-category {
+            font-size: 0.75rem;
+            color: var(--gray);
+            background: var(--light);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .transaction-date {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .transaction-amount {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .transaction-amount.income {
+            color: var(--success);
+        }
+        
+        .transaction-amount.expense {
+            color: var(--danger);
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-title {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .testimonials-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-slide {
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .testimonial-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--secondary);
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(rgba(0, 86, 179, 0.9), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 1.5rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.7rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-about p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-newsletter input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .footer-newsletter input::placeholder {
+            color: #ccc;
+        }
+        
+        .footer-newsletter button {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .footer-newsletter button:hover {
+            background: var(--secondary-dark);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+        
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            animation: slideDown 0.4s ease;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal-header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.2);
+        }
+        
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .form-check input {
+            accent-color: var(--secondary);
+        }
+        
+        .form-check label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        
+        .form-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .form-link:hover {
+            text-decoration: underline;
+        }
+        
+        .modal-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .modal-footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .modal-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Security Badge */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+            padding: 0.8rem;
+            background: var(--light);
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        
+        .security-badge i {
+            color: var(--success);
+            font-size: 1.2rem;
+        }
+        
+        /* Demo Notification */
+        .demo-notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark);
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideIn 0.5s ease;
+            max-width: 350px;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .close-notification {
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .close-notification:hover {
+            color: var(--secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .user-profile {
+                position: static;
+                margin-bottom: 2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .auth-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .account-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .transaction-item {
+                grid-template-columns: 40px 1fr auto;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+            
+            .modal-content {
+                margin: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Notification -->
+    <div class="demo-notification">
+        <i class="fas fa-info-circle"></i>
+        <span>Demo Environment: nexusbank-demo.capital | For demonstration purposes only</span>
+        <span class="close-notification" onclick="this.parentElement.style.display='none'">&times;</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-university"></i>
+                <h1>NexusBank<span>Pro</span></h1>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Accounts</a></li>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Cards</a></li>
+                    <li><a href="#">Invest</a></li>
+                    <li><a href="#">Loans</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <button class="btn btn-outline" onclick="openLogin()">Login</button>
+                <button class="btn btn-primary" onclick="openRegister()">Open Account</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Next-Generation Digital Banking</h2>
+            <p>Experience the future of finance with NexusBank Pro - where cutting-edge technology meets personalized banking solutions designed for your financial success.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Explore Features</button>
+                <button class="btn btn-outline">Watch Demo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Premium Banking Features</h2>
+                <p>Discover the powerful tools and services that make NexusBank Pro the smart choice for modern banking</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Mobile Banking</h3>
+                        <p>Bank anytime, anywhere with our award-winning mobile app featuring biometric login and instant notifications.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Advanced Security</h3>
+                        <p>Multi-factor authentication, AI fraud detection, and end-to-end encryption keep your accounts secure.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Instant Transfers</h3>
+                        <p>Send money to anyone in seconds with real-time payments, domestically and internationally.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Smart Budgeting</h3>
+                        <p>AI-powered spending insights and automated savings tools help you achieve your financial goals.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Virtual Cards</h3>
+                        <p>Generate disposable card numbers for online shopping with enhanced security and spending controls.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>24/7 Support</h3>
+                        <p>Dedicated relationship managers and instant chat support whenever you need assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-container">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <h3>Alex Johnson</h3>
+                        <p>Premium Member</p>
+                        <span class="user-status">Gold Tier</span>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">View Profile</button>
+                    
+                    <div class="quick-links">
+                        <h4>Quick Access</h4>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-file-invoice-dollar"></i> Statements</a></li>
+                            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="fas fa-shield-alt"></i> Security</a></li>
+                            <li><a href="#"><i class="fas fa-bell"></i> Alerts</a></li>
+                            <li><a href="#"><i class="fas fa-question-circle"></i> Help Center</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="accounts-summary">
+                    <div class="accounts-header">
+                        <h2>My Accounts</h2>
+                        <button class="btn btn-primary">+ New Account</button>
+                    </div>
+                    
+                    <div class="account-cards">
+                        <div class="account-card">
+                            <div class="account-type">
+                                <i class="fas fa-wallet"></i> Checking Account
+                            </div>
+                            <div class="account-balance">$18,742.56</div>
+                            <div class="account-number">•••• •••• •••• 4582</div>
+                            <div class="quick-actions">
+                                <button class="quick-btn"><i class="fas fa-exchange-alt"></i> Transfer</button>
+                                <button class="quick-btn"><i class="fas fa-money-bill-wave"></i> Pay</button>
+                                <button class="quick-btn"><i class="fas fa-ellipsis-h"></i> More</button>
+                            </div>
+                        </div>
+                        
+                        <div class="account-card">
+                            <div class="account-type">
+                                <i class="fas fa-piggy-bank"></i> Savings Account
+                            </div>
+                            <div class="account-balance">$52,369.87</div>
+                            <div class="account-number">•••• •••• •••• 7821</div>
+                            <div class="quick-actions">
+                                <button class="quick-btn"><i class="fas fa-exchange-alt"></i> Transfer</button>
+                                <button class="quick-btn"><i class="fas fa-chart-line"></i> Grow</button>
+                                <button class="quick-btn"><i class="fas fa-ellipsis-h"></i> More</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="transactions">
+                        <div class="transactions-header">
+                            <h3>Recent Transactions</h3>
+                            <a href="#"><i class="fas fa-arrow-right"></i> View All</a>
+                        </div>
+                        
+                        <div class="transactions-list">
+                            <div class="transaction-item">
+                                <div class="transaction-icon">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Amazon Marketplace</h4>
+                                    <span class="transaction-category">Shopping</span>
+                                    <div class="transaction-date">Today, 2:45 PM</div>
+                                </div>
+                                <div class="transaction-amount expense">-$129.99</div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon">
+                                    <i class="fas fa-arrow-down"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Direct Deposit</h4>
+                                    <span class="transaction-category">Income</span>
+                                    <div class="transaction-date">Jun 1, 2023</div>
+                                </div>
+                                <div class="transaction-amount income">+$6,250.00</div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Mortgage Payment</h4>
+                                    <span class="transaction-category">Housing</span>
+                                    <div class="transaction-date">May 28, 2023</div>
+                                </div>
+                                <div class="transaction-amount expense">-$2,150.00</div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon">
+                                    <i class="fas fa-utensils"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Bistro Central</h4>
+                                    <span class="transaction-category">Dining</span>
+                                    <div class="transaction-date">May 26, 2023</div>
+                                </div>
+                                <div class="transaction-amount expense">-$87.50</div>
+                            </div>
+                            
+                            <div class="transaction-item">
+                                <div class="transaction-icon">
+                                    <i class="fas fa-arrow-up"></i>
+                                </div>
+                                <div class="transaction-details">
+                                    <h4>Transfer to Savings</h4>
+                                    <span class="transaction-category">Transfer</span>
+                                    <div class="transaction-date">May 25, 2023</div>
+                                </div>
+                                <div class="transaction-amount expense">-$750.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">2.5M+</div>
+                    <div class="stat-title">Satisfied Customers</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-title">Countries Supported</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-title">Secure Transactions</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-title">Customer Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from our satisfied customers about their NexusBank Pro experience</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-slide">
+                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                    <p class="testimonial-text">"NexusBank Pro has completely transformed how I manage my finances. The mobile app is incredibly intuitive, and the budgeting tools have helped me save 20% more each month."</p>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">Small Business Owner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Experience Premium Banking?</h2>
+            <p>Join thousands of satisfied customers who trust NexusBank Pro with their financial needs</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">Open Your Account</button>
+                <button class="btn btn-outline">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="logo" style="margin-bottom: 1.5rem;">
+                        <i class="fas fa-university"></i>
+                        <h1>NexusBank<span>Pro</span></h1>
+                    </div>
+                    <div class="footer-about">
+                        <p>NexusBank Pro is a next-generation digital banking platform offering premium financial services with cutting-edge technology and personalized support.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Banking</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Checking Accounts</a></li>
+                        <li><a href="#">Savings Accounts</a></li>
+                        <li><a href="#">Credit Cards</a></li>
+                        <li><a href="#">Personal Loans</a></li>
+                        <li><a href="#">Mortgages</a></li>
+                        <li><a href="#">Investment Accounts</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mobile Banking</a></li>
+                        <li><a href="#">Online Banking</a></li>
+                        <li><a href="#">Wire Transfers</a></li>
+                        <li><a href="#">Bill Pay</a></li>
+                        <li><a href="#">Zelle®</a></li>
+                        <li><a href="#">ATM Locator</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 1rem;">Subscribe to get updates on new features and financial tips.</p>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> NexusBank Pro. All rights reserved. | Member FDIC | Equal Housing Lender</p>
+                <p style="margin-top: 0.8rem; font-size: 0.8rem;">
+                    <a href="#" style="color: #aaa; margin-right: 1rem;">Privacy Policy</a>
+                    <a href="#" style="color: #aaa; margin-right: 1rem;">Terms of Service</a>
+                    <a href="#" style="color: #aaa; margin-right: 1rem;">Security</a>
+                    <a href="#" style="color: #aaa;">Disclosures</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Welcome to NexusBank Pro</h3>
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <div class="form-options">
+                        <div class="form-check">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="form-link">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                    
+                    <div class="security-badge">
+                        <i class="fas fa-lock"></i>
+                        <span>256-bit SSL encryption secured login</span>
+                    </div>
+                </form>
+                
+                <div class="modal-footer">
+                    Don't have an account? <a href="#" onclick="openRegister()">Sign up now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openLogin() {
+            document.getElementById('loginModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function openRegister() {
+            alert('Registration page would open here. This is a frontend demo.');
+        }
+        
+        function closeModal() {
+            document.getElementById('loginModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('loginModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login functionality would be handled by backend in a real application.');
+            closeModal();
+        });
+        
+        // Update current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Simulate balance update (demo only)
+            setInterval(() => {
+                const balanceElements = document.querySelectorAll('.account-balance');
+                balanceElements.forEach(el => {
+                    const currentBalance = parseFloat(el.textContent.replace('$', '').replace(',', ''));
+                    const fluctuation = (Math.random() * 20 - 10); // Random fluctuation between -10 and +10
+                    const newBalance = Math.max(0, currentBalance + fluctuation);
+                    el.textContent = '$' + newBalance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                });
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
